@@ -2,6 +2,8 @@ import sys
 from time import sleep 
 import urllib2 
 
+
+
 tempfile1 = open("/sys/bus/w1/devices/10-000801d2ca71/w1_slave")
 thetext1 = tempfile1.read()
 tempfile1.close()
@@ -10,6 +12,7 @@ temperature1 = float(tempdata1[2:])
 temperatureTxt1 = temperature1 / 1000
 print (temperatureTxt1)
 
+#temp pieca
 tempfile2 = open("/sys/bus/w1/devices/28-000005bbd1d1/w1_slave")
 thetext2 = tempfile2.read()
 tempfile2.close()
@@ -35,7 +38,7 @@ temperatureTxt4 = temperature1 / 1000
 print (temperatureTxt4)
 
 baseURL = 'http://api.thingspeak.com/update?api_key=7MK6L089WHKG1FB1&field1=' 
-f = urllib2.urlopen(baseURL + temperatureTxt1 + '&field2=' + temperatureTxt2 + '&field3=' + temperatureTxt4 + '&field5=' + temperatureTxt5) 
+f = urllib2.urlopen(baseURL + str(temperatureTxt2) + '&field2=' + str(temperatureTxt4) + '&field3=' + str(temperatureTxt3) + '&field4=' + str(temperatureTxt1) ) 
 f.read() 
 f.close() 
 sleep(5) 
