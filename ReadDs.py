@@ -38,7 +38,7 @@ temperatureTxt4 = temperature1 / 1000
 print (temperatureTxt4)
 
 baseURL = 'http://api.thingspeak.com/update?api_key=7MK6L089WHKG1FB1&field1=' 
-f = urllib2.urlopen(baseURL + str(temperatureTxt2) + '&field2=' + str(temperatureTxt4) + '&field3=' + str(temperatureTxt3) + '&field4=' + str(temperatureTxt1) ) 
+f = urllib2.urlopen(baseURL + str(temperatureTxt2) + '&field2=' + str(temperatureTxt3) + '&field3=' + str(temperatureTxt4) + '&field4=' + str(temperatureTxt1) ) 
 f.read() 
 f.close() 
 sleep(5) 
